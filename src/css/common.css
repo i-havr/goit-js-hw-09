@@ -16,3 +16,66 @@ img {
   display: block;
   max-width: 100%;
 }
+
+.countdown {
+  width: 300px;
+  /* margin-left: auto; */
+  margin-right: auto;
+  padding: 20px;
+  background-color: aliceblue;
+  border: 2px solid greenyellow;
+  border-radius: 5px;
+}
+
+.countdown input {
+  display: block;
+  width: 125px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5px;
+  background-color: beige;
+  border: none;
+  border: 2px solid greenyellow;
+  border-radius: 5px;
+}
+
+.countdown button {
+  display: block;
+  width: 125px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15px;
+  cursor: pointer;
+  border: none;
+  border: 2px solid greenyellow;
+  border-radius: 5px;
+}
+
+.timer {
+  width: 100%;
+  /* height: 50px; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.field {
+  width: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: beige;
+  border: 2px solid greenyellow;
+  border-radius: 5px;
+}
+
+.countdown .value {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.countdown .label {
+  font-size: 10px;
+  text-transform: uppercase;

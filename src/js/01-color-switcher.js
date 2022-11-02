@@ -1,5 +1,6 @@
 const btnStartRef = document.querySelector('[data-start]');
 const btnStopRef = document.querySelector('[data-stop]');
+let timerId = null;
 
 btnStartRef.addEventListener('click', onButtonStart);
 btnStopRef.addEventListener('click', onButtonStop);
