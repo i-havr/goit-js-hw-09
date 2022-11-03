@@ -35,8 +35,16 @@ const options = {
 const fp = flatpickr(refs.inputField, options);
 
 const countdown = {
+  intervalId: null,
+  isActive: false,
   start() {
+    if (this.isActive) {
+      return;
+    }
+
     disableStartButton();
+    this.isActivev = true;
+
     const selectedDate = fp.selectedDates[0].getTime();
 
     function updateClockLook() {
@@ -50,12 +58,10 @@ const countdown = {
     }
     updateClockLook();
 
-    const interval = setInterval(() => {
+    this.intervalId = setInterval(() => {
       startTime = Date.now();
       deltaTime = selectedDate - startTime;
-
       let { days, hours, minutes, seconds } = convertMs(deltaTime);
-      console.log({ days, hours, minutes, seconds });
       updateClockLook();
 
       if (
@@ -64,7 +70,7 @@ const countdown = {
         minutes === '00' &&
         seconds === '00'
       ) {
-        clearInterval(interval);
+        clearInterval(this.intervalId);
       }
     }, UPDATE_INTERVAL);
   },
